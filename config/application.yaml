@@ -1,0 +1,34 @@
+server:
+  port: 8085
+  # debug | release | test 运行环境
+  level: debug
+
+mysql:
+  url: 127.0.0.1:3306
+  port: 3306
+  username: root
+  password: 123456
+  dbname: go_test
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password:
+  data_base: 1
+
+
+jwt:
+  admin:
+    # 设置jwt签名加密时使用的秘钥
+    secret: admin
+    # 设置jwt过期时间
+    ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    name: token
+  user:
+    # 设置jwt签名加密时使用的秘钥
+    secret: user
+    # 设置jwt过期时间
+    ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    name: Authorization
