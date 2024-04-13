@@ -20,6 +20,15 @@ import (
 type UserService struct {
 }
 
+type IUserService interface {
+	CreateUser(user *model.User) error
+	FindList(users *[]model.User) error
+	FindById(user *model.User, id string) error
+	UpdateUser(user *model.User) error
+	DeleteUser(id uint64) error
+	UserLogin(userLoginReq *request.UserLogin) (*response.User, error)
+}
+
 var dao = impl.UserDao{}
 
 func (service *UserService) CreateUser(user *model.User) (err error) {
